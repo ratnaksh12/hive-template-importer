@@ -1,0 +1,18 @@
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# env — keep credentials out of the repo
+.env
+.env.local
+.env*.local
+
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+
+.DS_Store
+Thumbs.db
+npm-debug.log*

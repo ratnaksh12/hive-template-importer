@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: oklch(22% 0.015 260);
+  --color-ink-soft: oklch(45% 0.012 260);
+  --color-paper: oklch(98.5% 0.003 260);
+  --color-surface: oklch(100% 0 0);
+  --color-line: oklch(91% 0.006 260);
+  --color-accent: oklch(55% 0.16 255);
+  --color-accent-soft: oklch(95% 0.03 255);
+  --color-defect: oklch(58% 0.19 25);
+  --color-defect-soft: oklch(96% 0.03 25);
+  --color-limit: oklch(65% 0.14 75);
+  --color-limit-soft: oklch(96% 0.04 75);
+  --color-info: oklch(58% 0.1 220);
+  --color-info-soft: oklch(96% 0.025 220);
+}
+
+html,
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+/* Rendered Spectora comment HTML: keep inspector formatting legible without
+   letting imported markup restyle the surrounding app chrome. */
+.comment-html :is(p) {
+  margin-block: 0.5rem;
+}
+.comment-html :is(ul, ol) {
+  margin-block: 0.5rem;
+  padding-inline-start: 1.5rem;
+}
+.comment-html ul {
+  list-style: disc;
+}
+.comment-html ol {
+  list-style: decimal;
+}
+.comment-html a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+.comment-html :is(b, strong) {
+  font-weight: 600;
+}
+.comment-html :is(i, em) {
+  font-style: italic;
+}

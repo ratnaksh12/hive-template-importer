@@ -1,0 +1,40 @@
+{
+  "name": "hive-template-importer",
+  "version": "1.0.0",
+  "description": "Import Spectora HTML-text template exports into a structured, editable schema.",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "seed": "tsx scripts/seed.ts",
+    "verify": "tsx scripts/verify-import.ts",
+    "verify:failures": "tsx scripts/verify-failures.ts",
+    "verify:copy": "tsx scripts/verify-copy.ts",
+    "test": "npm run typecheck && npm run verify && npm run verify:failures"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.116.0",
+    "exceljs": "^4.4.0",
+    "next": "^15.5.25",
+    "papaparse": "^5.7.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "sanitize-html": "^2.17.7",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^22.20.3",
+    "@types/papaparse": "^5.5.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/sanitize-html": "^2.16.1",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.3"
+  }
+}
