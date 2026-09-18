@@ -248,7 +248,21 @@ product.
 
 ## Links
 
-- **Live URL:** TODO(you)
+- **Live URL:** <https://hive-template-importer-smoky.vercel.app> — opens on the
+  seeded InterNACHI Residential template, no login required.
+- **Repo:** <https://github.com/ratnaksh12/hive-template-importer>
 - **Walkthrough video:** TODO(you)
 - **Hive / Binsr product feedback:** TODO(you) — capture notes while running your
   trial inspection so section 7 of the video is specific.
+
+### Deployment notes
+
+Deployed on Vercel from `main`, with `NEXT_PUBLIC_SUPABASE_URL` and
+`SUPABASE_SECRET_KEY` set as project environment variables. Vercel's Deployment
+Protection is disabled so the app is reachable without a Vercel account — worth
+re-checking in an incognito window after any redeploy, since a protected URL
+looks fine while you are logged in.
+
+The live database is seeded with exactly one imported template. Verified after
+deployment, anonymously: home page `200` with the template listed, template page
+`200` rendering the import report, and an unknown template id returning `404`.

@@ -3,6 +3,9 @@
 Import a Spectora **HTML-text spreadsheet export** into a structured, editable
 schema, edit it, duplicate it, and keep every change in a real database.
 
+**Live app: https://hive-template-importer-smoky.vercel.app**
+— opens on the seeded InterNACHI Residential template. No login required.
+
 Built for the Hive Inspect Forward Deployed Engineer exercise. The customer is an
 inspection company leaving Spectora with a template they have tuned for four
 years — so **preserving their work matters more than originality**.
