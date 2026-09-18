@@ -12,6 +12,7 @@
     "verify": "tsx scripts/verify-import.ts",
     "verify:failures": "tsx scripts/verify-failures.ts",
     "verify:copy": "tsx scripts/verify-copy.ts",
+    "verify:roundtrip": "tsx scripts/verify-roundtrip.ts",
     "test": "npm run typecheck && npm run verify && npm run verify:failures"
   },
   "license": "MIT",

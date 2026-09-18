@@ -87,10 +87,24 @@ Open <http://localhost:3000> and import the committed `.xls` file.
 | `npm run dev` | Development server |
 | `npm run build` | Production build |
 | `npm run typecheck` | `tsc --noEmit` |
-| `npx tsx scripts/verify-import.ts [file]` | **Preservation harness** — re-reads the spreadsheet independently and asserts nothing was dropped, reordered or reworded |
-| `npx tsx scripts/verify-failures.ts` | **Failure + robustness harness** — asserts bad input is rejected clearly and that variant exports still import |
+| `npm run seed` | Import the committed export into the database (`-- --force` to re-import) |
+| `npm run verify` | **Preservation harness** — re-reads the spreadsheet independently and asserts nothing was dropped, reordered or reworded |
+| `npm run verify:failures` | **Failure + robustness harness** — asserts bad input is rejected clearly and that variant exports still import |
+| `npm run verify:roundtrip` | **Database round-trip** — asserts the stored template matches the source file field by field |
+| `npm run verify:copy` | **Copy independence** — asserts edits to a duplicate never touch the original |
+| `npm test` | `typecheck` + `verify` + `verify:failures` (no database needed) |
 
-Both harnesses exit non-zero on failure, so they work in CI.
+Every harness exits non-zero on failure, so they all work in CI. `verify:roundtrip`
+and `verify:copy` need `.env.local`; the rest run offline.
+
+### Verified against the committed export
+
+```
+verify             12/12  392 source rows -> 392 comments, 13 sections, 69 items
+verify:failures    10/10  5 rejection cases + 5 format variants
+verify:roundtrip   11/11  stored template matches the file byte-for-byte
+verify:copy        10/10  edits to a copy leave the original untouched
+```
 
 ### Verifying preservation
 
