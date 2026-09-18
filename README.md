@@ -62,11 +62,13 @@ Fill in from **Supabase → Project Settings → API**:
 | Variable | Where to find it | Notes |
 |---|---|---|
 | `NEXT_PUBLIC_SUPABASE_URL` | Project URL | e.g. `https://abc.supabase.co` |
-| `SUPABASE_SERVICE_ROLE_KEY` | `service_role` secret | **Server-only.** Never prefix with `NEXT_PUBLIC_` |
+| `SUPABASE_SECRET_KEY` | **API Keys → secret** (`sb_secret_…`, formerly `service_role`) | **Server-only.** Never prefix with `NEXT_PUBLIC_`. `SUPABASE_SERVICE_ROLE_KEY` is also accepted |
 
-RLS is enabled on every table with no permissive policies, so the anon key cannot
-read or write. All access goes through server actions using the service role key.
-`.env.local` is gitignored; no credentials are in this repo.
+The **publishable** key (`sb_publishable_…`, formerly `anon`) will not work: RLS
+is enabled on every table with no permissive policies, so it cannot read or write
+any row. The app detects that key and fails with an explicit message rather than
+appearing to have an empty database. All access goes through server actions using
+the secret key. `.env.local` is gitignored; no credentials are in this repo.
 
 ### 4. Run
 
