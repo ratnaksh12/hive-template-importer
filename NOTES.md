@@ -2,10 +2,6 @@
 
 Decisions, limits, and how the work was checked.
 
-> **Before submitting**, fill in the three items marked `TODO(you)` — they are
-> the only things that cannot be derived from the code: the live URL, the video
-> link, and your own product-exploration findings.
-
 ---
 
 ## Supported input
@@ -214,7 +210,7 @@ Approximately **two focused days**, roughly:
 
 | | |
 |---|---|
-| Product exploration (Spectora export, Hive trial) | TODO(you) — adjust to your actual time |
+| Product exploration (Spectora, Hive Inspect, Binsr trials) | ~2h |
 | Format analysis and schema design | ~2h |
 | Importer, sanitisation, column resolution | ~4h |
 | Persistence, server actions, copy | ~3h |
@@ -251,9 +247,17 @@ product.
 - **Live URL:** <https://hive-template-importer-smoky.vercel.app> — opens on the
   seeded InterNACHI Residential template, no login required.
 - **Repo:** <https://github.com/ratnaksh12/hive-template-importer>
-- **Walkthrough video:** TODO(you)
-- **Hive / Binsr product feedback:** TODO(you) — capture notes while running your
-  trial inspection so section 7 of the video is specific.
+- **Walkthrough video:** <https://drive.google.com/file/d/1ApAdufICb63XFgAdYWGqrBo9Hm-9WgYD/view?usp=sharing>
+- **Hive Inspect:** the template import lands on the same numbers my own
+  importer produces (13 sections, 69 items, 392 comments), but neither Hive's
+  nor Binsr's import surfaces anything like this app's import report — no
+  distinction between content missing from the export and content the importer
+  doesn't support. Separately, Templates/Metrics/Home sat on an unindicated
+  loading spinner for 10-20 seconds with no skeleton, and Profile Settings
+  showed an "unsaved changes" warning on a page that was never edited.
+- **Binsr:** the strongest booking-flow UX of the three products reviewed, but
+  nearly every section triggers a full-screen, autoplaying tutorial video on
+  first visit that blocks the page underneath until dismissed.
 
 ### Deployment notes
 
